@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ExpoTechActivity!</string>
+    <string name="app_name">ExpoTech</string>
+    <string name="main">Splash</string>
+    <string name="AgendaImg">AgendaImg</string>
+    <string name="companyImg">CompanyImg</string>
+    <string name="aboutTxt">La 1ra EXPO "TENDENCIAS DE INNOVACIÓN EDUCATIVA Y SOLUCIONES MI PYME 2012" esta diseñada para ser un espacio en  el  que  se  den  cita  los  diferentes actores  que  intervienen  en  los  procesos  de  creación,  desarrollo,  aplicación  y  utilización  de  la tecnología tanto para el Segmento Educativo, como de todo tipo de Empresas y Profesionistas interesados en productos y/o servicios de Capacitación Continua on line, así como ofertas de Tecnología Empresarial orientadas a eficentar los procesos formativos de Recursos Humanos, Supervisión de procesos, ventas, etc. abordando contenidos de visión estratégica-tecnologica en las organizaciones.</string>
+
+	<!--  Dias de la Ageda -->
+    <string-array name="days_agenda">
+        <item>17 de Mayo de 2012</item>
+        <item>18 de mayo de 2012</item>
+    </string-array>
+</resources>
