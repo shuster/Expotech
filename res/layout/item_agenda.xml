@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="#666666">
+       
+    <LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="250dp"
+	    android:layout_height="fill_parent">
+	    <TextView
+	        android:id="@+id/item_conf"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="15dp"
+	        android:textStyle="bold" 
+	        android:textColor="@android:color/white"/>
+	    
+	    <TextView  
+			android:id="@+id/item_location"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+		    android:textSize="15dp"
+		    android:textStyle="bold" 
+		    android:textColor="@android:color/white"/>
+	    
+	    <TextView  
+			android:id="@+id/item_hour"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    android:textSize="13dp"
+		    android:textColor="@android:color/white"/>
+    
+    </LinearLayout>
+    
+    <ImageView 
+        android:background="@drawable/next"
+        android:layout_width="9dp"
+        android:layout_height="17dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="15dp"/>
+    
+</FrameLayout>

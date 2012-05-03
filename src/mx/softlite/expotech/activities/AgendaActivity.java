@@ -27,7 +27,7 @@ public class AgendaActivity extends ListActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.listplaceholder);
+		setContentView(R.layout.place_holder_agenda);
 
 		Bundle extras = getIntent().getExtras();
 		if(extras != null){

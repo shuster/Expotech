@@ -20,45 +20,51 @@ public final class R {
     }
     public static final class drawable {
         public static final int about=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_launcher_ex=0x7f020002;
-        public static final int ic_location=0x7f020003;
-        public static final int ic_tab_about=0x7f020004;
-        public static final int ic_tab_about_grey=0x7f020005;
-        public static final int ic_tab_about_white=0x7f020006;
-        public static final int ic_tab_agenda=0x7f020007;
-        public static final int ic_tab_agenda_grey=0x7f020008;
-        public static final int ic_tab_agenda_white=0x7f020009;
-        public static final int ic_tab_company=0x7f02000a;
-        public static final int ic_tab_company_grey=0x7f02000b;
-        public static final int ic_tab_company_white=0x7f02000c;
-        public static final int ic_tab_location=0x7f02000d;
-        public static final int ic_tab_location_grey=0x7f02000e;
-        public static final int ic_tab_location_white=0x7f02000f;
-        public static final int main=0x7f020010;
+        public static final int flecha_der=0x7f020001;
+        public static final int flecha_izq=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int ic_launcher_ex=0x7f020004;
+        public static final int ic_location=0x7f020005;
+        public static final int ic_tab_about=0x7f020006;
+        public static final int ic_tab_about_grey=0x7f020007;
+        public static final int ic_tab_about_white=0x7f020008;
+        public static final int ic_tab_agenda=0x7f020009;
+        public static final int ic_tab_agenda_grey=0x7f02000a;
+        public static final int ic_tab_agenda_white=0x7f02000b;
+        public static final int ic_tab_company=0x7f02000c;
+        public static final int ic_tab_company_grey=0x7f02000d;
+        public static final int ic_tab_company_white=0x7f02000e;
+        public static final int ic_tab_location=0x7f02000f;
+        public static final int ic_tab_location_grey=0x7f020010;
+        public static final int ic_tab_location_white=0x7f020011;
+        public static final int layer_title=0x7f020012;
+        public static final int main=0x7f020013;
+        public static final int next=0x7f020014;
     }
     public static final class id {
+        public static final int arrow_left=0x7f07000a;
+        public static final int arrow_right=0x7f07000b;
         public static final int img_about=0x7f070000;
-        public static final int item_conf=0x7f070002;
-        public static final int item_desc=0x7f070004;
-        public static final int item_desc_company=0x7f070008;
-        public static final int item_hour=0x7f070001;
-        public static final int item_img_company=0x7f070005;
-        public static final int item_location=0x7f070003;
-        public static final int item_title=0x7f070006;
-        public static final int item_url=0x7f070007;
-        public static final int location=0x7f070009;
-        public static final int main=0x7f07000a;
+        public static final int item_conf=0x7f070001;
+        public static final int item_hour=0x7f070003;
+        public static final int item_img_company=0x7f070004;
+        public static final int item_location=0x7f070002;
+        public static final int item_title=0x7f070005;
+        public static final int item_url=0x7f070006;
+        public static final int location=0x7f070007;
+        public static final int main=0x7f070008;
+        public static final int txt_day=0x7f070009;
     }
     public static final class layout {
         public static final int about=0x7f030000;
-        public static final int agenda=0x7f030001;
-        public static final int companies=0x7f030002;
-        public static final int days_item=0x7f030003;
-        public static final int home=0x7f030004;
-        public static final int listplaceholder=0x7f030005;
-        public static final int location=0x7f030006;
-        public static final int main=0x7f030007;
+        public static final int days_item=0x7f030001;
+        public static final int home=0x7f030002;
+        public static final int item_agenda=0x7f030003;
+        public static final int item_company=0x7f030004;
+        public static final int location=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int place_holder_agenda=0x7f030007;
+        public static final int place_holder_company=0x7f030008;
     }
     public static final class string {
         public static final int AgendaImg=0x7f040003;
@@ -67,5 +73,7 @@ public final class R {
         public static final int companyImg=0x7f040004;
         public static final int hello=0x7f040000;
         public static final int main=0x7f040002;
+        public static final int mayo1=0x7f040006;
+        public static final int mayo2=0x7f040007;
     }
 }

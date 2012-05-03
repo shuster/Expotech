@@ -43,7 +43,7 @@ public class CompanyAdapter extends BaseAdapter {
 		Company company = companies.get(position);
 		
 		if(convertView == null){
-			convertView = LayoutInflater.from(context).inflate(R.layout.companies, parent, false);						
+			convertView = LayoutInflater.from(context).inflate(R.layout.item_company, parent, false);						
 		}
 		
 		TextView txtTmp = null;
@@ -70,9 +70,6 @@ public class CompanyAdapter extends BaseAdapter {
 		
 		txtTmp = (TextView) convertView.findViewById(R.id.item_url);
 		txtTmp.setText((company.getUrl()!=null)?company.getUrl():"");
-		
-		txtTmp = (TextView) convertView.findViewById(R.id.item_desc_company);
-		txtTmp.setText(company.getDesc());
 		
 		return convertView;
 	}

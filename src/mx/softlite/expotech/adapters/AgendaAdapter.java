@@ -37,21 +37,18 @@ public class AgendaAdapter extends BaseAdapter {
 		Agenda agenda = agendas.get(position);
 		
 		if(convertView == null){
-			convertView = LayoutInflater.from(context).inflate(R.layout.agenda, parent, false);						
+			convertView = LayoutInflater.from(context).inflate(R.layout.item_agenda, parent, false);						
 		}
 		
 		TextView txtTmp = null;		
 		txtTmp = (TextView) convertView.findViewById(R.id.item_hour);
-		txtTmp.setText(agenda.getHour());
+		txtTmp.setText("Hora: " + agenda.getHour());
 		
 		txtTmp = (TextView) convertView.findViewById(R.id.item_conf);
 		txtTmp.setText(agenda.getConfe());
 		
 		txtTmp = (TextView) convertView.findViewById(R.id.item_location);
 		txtTmp.setText("Lugar: " + agenda.getLocaltion());
-		
-		txtTmp = (TextView) convertView.findViewById(R.id.item_desc);
-		txtTmp.setText(agenda.getDesc());
 		
 		return convertView;
 	}

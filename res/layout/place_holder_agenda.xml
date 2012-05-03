@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#666666"
+    android:orientation="vertical" >
+    
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/layer_title" >
+        
+        <TextView
+            android:id="@+id/txt_day"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|center_horizontal"
+            android:text="@string/mayo1"
+            android:textColor="@android:color/white"
+            android:textSize="30dp" />
+        
+        <ImageButton 
+            android:id="@+id/arrow_left"
+            android:background="@drawable/flecha_izq"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="10dp"/>
+        
+         <ImageButton 
+            android:id="@+id/arrow_right"
+            android:background="@drawable/flecha_der"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="10dp"/>
+        
+    </FrameLayout>
+    
+    <ListView
+	 	android:id="@id/android:list"
+	    android:layout_width="fill_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	 	android:drawSelectorOnTop="false" />
+
+</LinearLayout>

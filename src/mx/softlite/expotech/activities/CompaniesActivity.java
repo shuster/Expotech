@@ -29,7 +29,7 @@ public class CompaniesActivity extends ListActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.listplaceholder);
+		setContentView(R.layout.place_holder_company);
 		
 		if(Utils.haveInternet(getApplicationContext())){
 			loadData(URL_COMPANIES);

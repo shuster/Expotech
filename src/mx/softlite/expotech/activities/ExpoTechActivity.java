@@ -18,6 +18,7 @@ public class ExpoTechActivity extends Activity {
     private void gotoAgenda(){
 		Intent intent = new Intent(this, HomeActivity.class);
 		startActivity(intent);
+		this.finish();
 	}
     
     private void loadData() {
