@@ -30,6 +30,10 @@
         <activity android:name=".activities.CompaniesActivity"/>
         <activity android:name=".activities.LocationActivity"/>
         <activity android:name=".activities.DaysActivity"/>
+        <activity android:name=".activities.ConferenceActivity"/>
+        <activity android:name=".activities.SpeakerActivity"/>
+        <activity android:name=".activities.ZonesActivity"/>
+        <activity android:name=".activities.CompanyActivity"/>
     </application>
         
 </manifest>

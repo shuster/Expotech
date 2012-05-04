@@ -15,9 +15,14 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class CompaniesActivity extends ListActivity{
@@ -37,8 +42,23 @@ public class CompaniesActivity extends ListActivity{
 		else{
 			Toast.makeText(getApplicationContext(), "Necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
 		}
+		
+		ListView listView = getListView();
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				loadActivity(position);
+			}
+		});
 	}
 
+	private void loadActivity(int position){
+		Intent intent = new Intent(this, CompanyActivity.class);			
+		intent.putExtra("Company", companies.get(position));		
+		startActivity(intent);
+	}
+	
 	private final Handler progressHandler = new Handler() {
 		public void handleMessage(Message msg) {
 			progressDialog.dismiss();

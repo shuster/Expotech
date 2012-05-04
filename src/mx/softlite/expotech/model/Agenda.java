@@ -1,12 +1,16 @@
 package mx.softlite.expotech.model;
 
-public class Agenda {
+import java.io.Serializable;
 
+public class Agenda implements Serializable{
+
+	private static final long serialVersionUID = -7070320539372675012L;
 	private String nid;
 	private String hour;
 	private String confe;
 	private String localtion;
 	private String desc;
+	private String speakId;
 	
 	public String getNid() {
 		return nid;
@@ -38,4 +42,11 @@ public class Agenda {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+	public String getSpeakId() {
+		return speakId;
+	}
+	public void setSpeakId(String speakId) {
+		this.speakId = speakId;
+	}
+	
 }

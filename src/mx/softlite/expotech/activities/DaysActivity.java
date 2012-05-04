@@ -16,11 +16,15 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +37,7 @@ public class DaysActivity extends ListActivity{
 	private String url;
 	private boolean btnLeft = false;
 	private boolean btnRight = true;
+	private String dayCurrent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,14 @@ public class DaysActivity extends ListActivity{
 			Toast.makeText(getApplicationContext(), "Necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
 		}
 	
+		ListView listView = getListView();
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				loadActivity(position);
+			}
+		});
 	}
 	
 	@Override
@@ -81,10 +94,19 @@ public class DaysActivity extends ListActivity{
 		}
 	}
 	
+	private void loadActivity(int position){
+		Intent intent = new Intent(this, ConferenceActivity.class);			
+		intent.putExtra("Agenda", agendas.get(position));
+		intent.putExtra("day", getDayCurrent());
+		
+		startActivity(intent);
+	}
+	
 	private void setItemsAgenda(String url, int resId, boolean btnLeft, boolean btnRight){
 		fileName = (url.contains("agenda-d1"))?"agenda1.json":"agenda2.json";
 		TextView txt = (TextView) findViewById(R.id.txt_day);
 		txt.setText(resId);
+		setDayCurrent(getResources().getString(resId));
 		loadData(url);
 		setBtnLeft(btnLeft);
 		setBtnRight(btnRight);
@@ -166,6 +188,12 @@ public class DaysActivity extends ListActivity{
 	}
 	public void setBtnRight(boolean btnRight) {
 		this.btnRight = btnRight;
+	}
+	public String getDayCurrent() {
+		return dayCurrent;
+	}
+	public void setDayCurrent(String dayCurrent) {
+		this.dayCurrent = dayCurrent;
 	}
 	
 }

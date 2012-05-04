@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#3d4042">
+    
+    <LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    
+        <LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#666666"
+		    android:paddingBottom="25dp">
+		    
+            <ImageView 
+			    android:id="@+id/company_img"
+		        android:layout_width="150dp"
+		        android:layout_height="150dp"
+		        android:contentDescription="@string/companyImg"
+		        android:layout_gravity="left|center_vertical"
+		        android:background="@android:color/white"
+		        android:layout_marginTop="10dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginBottom="10dp"
+		        android:padding="5dp"/>
+		    
+             <LinearLayout 
+			    android:orientation="vertical"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="left|center_vertical"
+				android:gravity="center_vertical">
+		    
+                 <TextView  
+					android:id="@+id/company_name"
+				    android:layout_width="fill_parent" 
+				    android:layout_height="wrap_content"
+				    android:textSize="17dp"
+				    android:textColor="@android:color/white"
+				    android:paddingLeft="10dp"/>
+                 
+            </LinearLayout>            
+       	</LinearLayout>
+       	
+        <LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center|center_horizontal"
+		    android:gravity="center"
+		    android:padding="13dp">
+		    
+       	    <TextView
+		        android:id="@+id/company_desc"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="14dp"
+		        android:textColor="@android:color/black"
+		        android:background="@android:color/white"
+		        android:padding="7dp"/>
+       	    
+       </LinearLayout>
+       
+       <FrameLayout
+			android:layout_width="fill_parent"
+			android:layout_height="60dp">
+                 
+		    <TextView
+		        android:id="@+id/company_web"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:textSize="21dp"
+		        android:textStyle="bold" 
+		        android:textColor="@android:color/white"
+		        android:background="#666666"
+		        android:layout_marginTop="2dp"
+		        android:layout_gravity="left|center_vertical"
+		        android:gravity="center_vertical"
+		        android:paddingLeft="10dp"
+		        android:clickable="true"
+		        android:text="@string/lblWeb"/>
+		    
+		    <ImageView 
+		        android:background="@drawable/next"
+		        android:layout_width="9dp"
+		        android:layout_height="17dp"
+		        android:layout_gravity="right|center_vertical"
+		        android:layout_marginRight="15dp"/>
+		    
+       	</FrameLayout>
+        
+  	</LinearLayout>
+</ScrollView>

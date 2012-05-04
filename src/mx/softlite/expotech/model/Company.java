@@ -1,7 +1,10 @@
 package mx.softlite.expotech.model;
 
-public class Company {
+import java.io.Serializable;
 
+public class Company implements Serializable{
+
+	private static final long serialVersionUID = -313741219406331909L;
 	private String nid;
 	private String title;
 	private String logo;

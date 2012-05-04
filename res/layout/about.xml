@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:background="#eef5f7" 
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="#3d4042">
     
-    <ImageView
-    	android:id="@+id/img_about"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-    	android:contentDescription="@string/main"
-    	android:layout_gravity="center"
-    	android:background="@drawable/about"/>
+     <LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    
+       	<ImageView 
+       	    android:layout_width="140dp"
+       	    android:layout_height="110dp"
+       	    android:background="@drawable/logo_soft"
+       	    android:layout_gravity="center|center_horizontal"
+       	   	android:layout_margin="13dp"/>
+       	
+       	<TextView 
+       	    android:layout_width="wrap_content"
+       	    android:layout_height="wrap_content"
+       	    android:text="@string/lblAboutSof"
+       	    android:textColor="@android:color/white"
+       	    android:textSize="23dp"
+       	    android:textStyle="bold"
+       	    android:layout_marginLeft="10dp"
+       	    android:layout_marginBottom="15dp"/>
+       	
+       	<TextView 
+       	    android:layout_width="fill_parent"
+       	    android:layout_height="wrap_content"
+       	    android:text="@string/aboutSof"
+       	    android:textColor="@android:color/white"
+       	    android:textSize="13dp"
+       	    android:layout_margin="7dp"/>
+       	
+       	<View
+			 android:layout_width="match_parent"
+			 android:layout_height="1dp"
+			 android:background="@android:color/white"
+			 android:layout_margin="20dp"/>
+
+       	<ImageView 
+       	    android:layout_width="200dp"
+       	    android:layout_height="90dp"
+       	    android:background="@drawable/logo_ex"
+       	    android:layout_gravity="center|center_horizontal"
+       	   	android:layout_margin="13dp"/>
+       	
+       	<TextView 
+       	    android:layout_width="wrap_content"
+       	    android:layout_height="wrap_content"
+       	    android:text="@string/lblAboutExp"
+       	    android:textColor="@android:color/white"
+       	    android:textSize="23dp"
+       	    android:textStyle="bold"
+       	    android:layout_marginLeft="10dp"
+       	    android:layout_marginBottom="15dp"/>
+       	
+       	<TextView 
+       	    android:layout_width="fill_parent"
+       	    android:layout_height="wrap_content"
+       	    android:text="@string/aboutExp"
+       	    android:textColor="@android:color/white"
+       	    android:textSize="13dp"
+       	    android:layout_margin="7dp"/>
+       	
+	</LinearLayout>
     
-</LinearLayout>
+</ScrollView>

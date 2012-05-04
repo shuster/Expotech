@@ -10,9 +10,8 @@ public class ExpoTechActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-       loadData();
+        setContentView(R.layout.main);        
+        loadData();
     }
     
     private void gotoAgenda(){

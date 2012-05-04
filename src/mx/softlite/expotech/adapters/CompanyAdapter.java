@@ -68,8 +68,8 @@ public class CompanyAdapter extends BaseAdapter {
 		txtTmp = (TextView) convertView.findViewById(R.id.item_title);
 		txtTmp.setText(company.getTitle());
 		
-		txtTmp = (TextView) convertView.findViewById(R.id.item_url);
-		txtTmp.setText((company.getUrl()!=null)?company.getUrl():"");
+//		txtTmp = (TextView) convertView.findViewById(R.id.item_url);
+//		txtTmp.setText((company.getUrl()!=null)?company.getUrl():"");
 		
 		return convertView;
 	}
