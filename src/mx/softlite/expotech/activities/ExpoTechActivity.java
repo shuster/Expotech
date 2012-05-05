@@ -25,7 +25,7 @@ public class ExpoTechActivity extends Activity {
 		new Thread(new Runnable(){
 			public void run() {
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					gotoAgenda();
 				} catch (InterruptedException e) {
 					e.printStackTrace();

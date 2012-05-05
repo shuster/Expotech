@@ -1,5 +1,6 @@
 package mx.softlite.expotech.activities;
 
+import static mx.softlite.expotech.ApplicationConstant.FILE_NAME_SPEAKERS;
 import static mx.softlite.expotech.ApplicationConstant.URL_SPEAKERS;
 
 import java.io.InputStream;
@@ -45,7 +46,12 @@ public class ConferenceActivity extends Activity {
 			loadData(URL_SPEAKERS);
 		}
 		else{
-			Toast.makeText(getApplicationContext(), "Necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
+			if(Utils.isFileSaved(getApplicationContext(), FILE_NAME_SPEAKERS)){
+				loadData(URL_SPEAKERS);
+			}
+			else{
+				messageEmpty();
+			}
 		}
 	}
 	
@@ -54,21 +60,30 @@ public class ConferenceActivity extends Activity {
 		super.onPostCreate(savedInstanceState);
 		
 		if(Utils.haveInternet(getApplicationContext())){
-			TextView txtSpeaker = (TextView) findViewById(R.id.conf_speaker);
-			txtSpeaker.setOnClickListener(new OnClickListener() {				
-				public void onClick(View v) {
-					loadSpeakerAct();
-				}
-			} );
+			onClickDataSpeaker();
 		}
 		else{
-			Toast.makeText(getApplicationContext(), "Necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
+			if(Utils.isFileSaved(getApplicationContext(), FILE_NAME_SPEAKERS)){
+				onClickDataSpeaker();
+			}
+			else{
+				messageEmpty();
+			}
 		}
 		
 		TextView txtLocation = (TextView) findViewById(R.id.conf_location);
 		txtLocation.setOnClickListener(new OnClickListener() {				
 			public void onClick(View v) {
 				loadLocationAct();
+			}
+		} );
+	}
+	
+	private void onClickDataSpeaker(){
+		TextView txtSpeaker = (TextView) findViewById(R.id.conf_speaker);
+		txtSpeaker.setOnClickListener(new OnClickListener() {				
+			public void onClick(View v) {
+				loadSpeakerAct();
 			}
 		} );
 	}
@@ -105,14 +120,14 @@ public class ConferenceActivity extends Activity {
 		
 		new Thread(new Runnable(){
 			public void run() {
-				json =  JsonUtil.getJsonfromURL(getApplicationContext(), url, "speakers.json");
+				json =  JsonUtil.getJsonfromURL(getApplicationContext(), url, FILE_NAME_SPEAKERS);
 				if(json != null){speaker = ParseUtil.getSpeakerFromId(json, agenda.getSpeakId());}
 				progressHandler.sendEmptyMessage(0);
 			}}).start();
     }	
 	
 	private void messageEmpty(){
-		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos, Trate mas tarde.", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos; necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
 		this.finish();
 	}
 	
@@ -139,6 +154,7 @@ public class ConferenceActivity extends Activity {
 			imgSpeaker.setImageBitmap(bmp);
 		} catch (Exception e) {
 			e.printStackTrace();
+			Toast.makeText(getApplicationContext(), "No se pudo cargar la imagen...", Toast.LENGTH_SHORT).show();
 		}	
 		
 		TextView confSpeak = (TextView) findViewById(R.id.conf_speaker);

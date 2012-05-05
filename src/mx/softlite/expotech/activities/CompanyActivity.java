@@ -32,12 +32,7 @@ public class CompanyActivity extends Activity {
 		setContentView(R.layout.company);
 		
 		company = (Company) getIntent().getSerializableExtra("Company");
-		if(Utils.haveInternet(getApplicationContext())){
-			loadData();
-		}
-		else{
-			Toast.makeText(getApplicationContext(), "Necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
-		}
+		loadData();
 	}
 	
 	@Override
@@ -82,7 +77,7 @@ public class CompanyActivity extends Activity {
     }	
 	
 	private void messageEmpty(){
-		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos, Trate mas tarde.", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos; necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
 		this.finish();
 	}
 	
@@ -103,6 +98,7 @@ public class CompanyActivity extends Activity {
 			imageView.setImageBitmap(bmp);
 		} catch (Exception e) {
 			e.printStackTrace();
+			Toast.makeText(getApplicationContext(), "No se pudo cargar la imagen...", Toast.LENGTH_SHORT).show();
 		}	
 		
 		TextView txtName = (TextView) findViewById(R.id.company_name);

@@ -1,5 +1,6 @@
 package mx.softlite.expotech.activities;
 
+import static mx.softlite.expotech.ApplicationConstant.FILE_NAME_COMPANIES;
 import static mx.softlite.expotech.ApplicationConstant.URL_COMPANIES;
 
 import java.util.List;
@@ -19,6 +20,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -40,7 +44,12 @@ public class CompaniesActivity extends ListActivity{
 			loadData(URL_COMPANIES);
 		}
 		else{
-			Toast.makeText(getApplicationContext(), "Necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
+			if(Utils.isFileSaved(getApplicationContext(), FILE_NAME_COMPANIES)){
+				loadData(URL_COMPANIES);
+			}
+			else{
+				messageEmpty();
+			}	
 		}
 		
 		ListView listView = getListView();
@@ -80,7 +89,7 @@ public class CompaniesActivity extends ListActivity{
 		
 		new Thread(new Runnable(){
 			public void run() {
-				json =  JsonUtil.getJsonfromURL(getApplicationContext(), url, "companies.json");
+				json =  JsonUtil.getJsonfromURL(getApplicationContext(), url, FILE_NAME_COMPANIES);
 				if(json != null){setCompanies(ParseUtil.getCompanyFromJson(json));}
 				progressHandler.sendEmptyMessage(0);
 			}}).start();
@@ -91,7 +100,35 @@ public class CompaniesActivity extends ListActivity{
 	}
 	
 	private void messageEmpty(){
-		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos, Trate mas tarde.", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos; necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.refresh:
+	        	if(Utils.haveInternet(getApplicationContext())){
+	        		Utils.deleteFile(getApplicationContext(), FILE_NAME_COMPANIES);
+	        		loadData(URL_COMPANIES);
+	    		}
+	    		else{
+	    			messageEmpty();
+	    		}
+	            return true;
+	        case R.id.close:
+	            System.exit(0);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 	
 	public JSONObject getJson() {

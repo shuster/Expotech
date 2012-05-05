@@ -13,6 +13,8 @@
     <string name="lblAboutExp">Acerca de la Expo</string>
     <string name="aboutSof">Al crear esta aplicación preparamos algo con calidad, estilo y siempre pensando en usted, porque nuestro trabajo solo es importante si a usted le es útil.</string>
     <string name="aboutExp">La 1ra EXPO “TENDENCIAS DE INNOVACIÓN EDUCATIVA Y SOLUCIONES MI PYME 2012” esta diseñada para ser un espacio en  el  que  se  den  cita  los  diferentes actores  que  intervienen  en  los  procesos  de  creación,  desarrollo,  aplicación  y  utilización  de  la tecnología tanto para el Segmento Educativo, como de todo tipo de Empresas y Profesionistas interesados en productos y/o servicios de Capacitación Continua on line, así como ofertas de Tecnología Empresarial orientadas a eficentar los procesos formativos de Recursos Humanos, Supervisión de procesos, ventas, etc. abordando contenidos de visión estratégica-tecnologica en las organizaciones.</string>
+   	<string name="refresh">Recargar</string>
+   	<string name="close">Cerrar</string>
     
 	<!--  Dias de la Ageda -->
     <string-array name="days_agenda">

@@ -25,6 +25,12 @@ public class HomeActivity extends TabActivity {
             .setContent(intent);
 	    tabHost.addTab(spec);
 	    
+	    intent = new Intent().setClass(this, SpeakersActivity.class);
+	    spec = tabHost.newTabSpec("ponentes").setIndicator("Ponentes",
+                res.getDrawable(R.drawable.ic_tab_speaker))
+            .setContent(intent);
+	    tabHost.addTab(spec);
+	    
 	    intent = new Intent().setClass(this, CompaniesActivity.class);
 	    spec = tabHost.newTabSpec("empresa").setIndicator("Empresas",
                 res.getDrawable(R.drawable.ic_tab_company))

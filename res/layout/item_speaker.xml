@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="#666666">
+	
+    <LinearLayout 
+	    android:orientation="horizontal"
+	    android:layout_width="280dp"
+	    android:layout_height="wrap_content">
+	    
+		<ImageView 
+		    android:id="@+id/item_img_speaker"
+	        android:layout_width="120dp"
+	        android:layout_height="100dp"
+	        android:contentDescription="@string/companyImg"
+	        android:layout_margin="5dp"
+	        android:layout_gravity="left|center_vertical"
+	        android:background="@android:color/white"/>
+		
+		<LinearLayout 
+		    android:orientation="vertical"
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent">
+		 
+		    <FrameLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<TextView
+				    android:id="@+id/item_name_speaker"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_gravity="center_vertical"
+				    android:textColor="@android:color/white"
+				    android:textSize="15dp" />
+	
+			</FrameLayout>
+	    
+	    </LinearLayout>
+	
+    </LinearLayout>
+ 
+	<ImageView 
+        android:background="@drawable/next"
+        android:layout_width="9dp"
+        android:layout_height="17dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="15dp"/>
+    
+</FrameLayout>

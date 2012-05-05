@@ -34,6 +34,8 @@
         <activity android:name=".activities.SpeakerActivity"/>
         <activity android:name=".activities.ZonesActivity"/>
         <activity android:name=".activities.CompanyActivity"/>
+        <activity android:name=".activities.SpeakersActivity"/>
+        
     </application>
         
 </manifest>

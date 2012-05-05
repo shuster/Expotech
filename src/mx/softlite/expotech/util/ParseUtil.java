@@ -126,8 +126,8 @@ public class ParseUtil {
 				speaker.setName(node.getString("Nombre"));
 				speaker.setSurname(node.getString("Apellidos"));
 				speaker.setPhoto(node.getString("Foto"));
-				if(!node.isNull("Descripción")){
-					speaker.setDesc(node.getString("Descripción"));
+				if(!node.isNull("Descripci—n")){
+					speaker.setDesc(node.getString("Descripci—n"));
 				}
 				
 				speakers.add(speaker);

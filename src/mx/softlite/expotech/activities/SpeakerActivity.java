@@ -26,14 +26,20 @@ public class SpeakerActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.speaker);
-		speaker = (Speaker) getIntent().getSerializableExtra("Speaker");		
+		speaker = (Speaker) getIntent().getSerializableExtra("Speaker");	
+		
 		loadData();
 	}
 	
 	private final Handler progressHandler = new Handler() {
 		public void handleMessage(Message msg) {
 			progressDialog.dismiss();
-			fillList();			
+			if(speaker != null){
+				fillList();			
+			}
+			else{
+				messageEmpty();
+			}
 		}
 	};
 	
@@ -51,7 +57,7 @@ public class SpeakerActivity extends Activity{
     }	
 	
 	private void messageEmpty(){
-		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos, Trate mas tarde.", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "No se pudieron obtener los datos; necesita Conexion a Internet, Trate mas tarde.", Toast.LENGTH_LONG).show();
 		this.finish();
 	}
 	
@@ -75,7 +81,7 @@ public class SpeakerActivity extends Activity{
 			imgSpeaker.setImageBitmap(bmp);
 		} catch (Exception e) {
 			e.printStackTrace();
-			messageEmpty();
+			Toast.makeText(getApplicationContext(), "No se pudo cargar la imagen...", Toast.LENGTH_SHORT).show();
 		}	
 		
 		TextView speakDesc = (TextView) findViewById(R.id.speak_desc);

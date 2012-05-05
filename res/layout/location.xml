@@ -9,7 +9,7 @@
         android:id="@+id/location"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		android:apiKey="0x3RVfaBXMKgtzmkl12QDa33u5MS0mGMP2TcG1g"
+		android:apiKey="0x3RVfaBXMKgQvZty3SJwPKS0r_Do5dKTw6oDWA"
 		android:clickable="true"
 		/>
     

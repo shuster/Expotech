@@ -1,5 +1,8 @@
 package mx.softlite.expotech.activities;
 
+import static mx.softlite.expotech.ApplicationConstant.FILE_NAME_AGENDA1;
+import static mx.softlite.expotech.ApplicationConstant.FILE_NAME_AGENDA2;
+
 import java.util.List;
 
 import mx.softlite.expotech.R;
@@ -32,7 +35,7 @@ public class AgendaActivity extends ListActivity{
 		Bundle extras = getIntent().getExtras();
 		if(extras != null){
 			String url = extras.getString("url");
-			fileName = (url.contains("agenda-d1"))?"agenda1.json":"agenda2.json";
+			fileName = (url.contains("agenda-d1"))?FILE_NAME_AGENDA1:FILE_NAME_AGENDA2;
 			loadData(url);
 		}
 	}
